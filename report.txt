@@ -1,0 +1,61 @@
+For Transaction table the issues we face are:
+
+1. order_status coluumn is highly imbalanced(92.6%)
+
+-92.6% of transactions are of a specific order status.
+-Imbalanced classes might affect model performance.
+-Consider strategies like resampling or using appropriate metrics for analysis.
+
+2. online_order has 360 missing values. 
+
+-360 missing values in online_order column.
+-Decisions needed: drop rows or impute values.
+-Missing data handling based on data importance and domain knowledge.
+
+3. product_id has  1378 zeros.
+
+-1378 transactions have a product_id of zero.
+-Understand the context: placeholder, special transaction, or missing data?
+-Treatment depends on the meaning: impute, analyze separately, or other handling.
+
+For NewCustomerList table theissues we face are:
+
+1. Correlations:
+
+- Postcode and Property Valuation: There's a strong correlation between the "postcode" and "property_valuation" columns, implying that specific regions tend to have properties with consistent valuation ranges.
+- State and Postcode: The "state" and "postcode" columns are highly correlated, indicating that the dataset includes geographical information where states can be inferred from postcodes.
+
+2. Missing Values:
+
+- Last Name: Around 2.9% of "last_name" values are missing, suggesting that some individuals might not have provided their last names or data collection might have           missed this information.
+- Job Title: Approximately 10.6% of "job_title" values are missing, indicating that a notable portion of individuals did not have recorded job titles, possibly due to incomplete data entry.
+- Job Industry Category: Roughly 16.5% of "job_industry_category" values are missing, highlighting a significant number of individuals without specified job industries, potentially due to complexities in categorization or missing data.
+
+For CustomerDemographic table the issues we face are:
+
+-MISSING VALUES
+
+1. last_name has 125 missing values. 
+
+2. DOB has 87 missing values. 
+
+3. job_title has 506 missing values. 
+
+4. job_industry_category has 656 missing values 
+
+5. default has 302 missing values
+
+6. tenure has 87 missing values
+
+-IMBALANCE 
+
+1. deceased_indicator is highly imbalanced (99.4%)
+
+For CustomerAddress table the issues we face are:
+
+-High Correlation
+
+1. postcode is highly overall correlated with property_valuation
+
+2. state is highly overall correlated with postcode
+
